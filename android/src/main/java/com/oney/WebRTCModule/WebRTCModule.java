@@ -51,7 +51,7 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
     private final SparseArray<PeerConnectionObserver> mPeerConnectionObservers;
     public final Map<String, MediaStream> mMediaStreams;
     public final Map<String, MediaStreamTrack> mMediaStreamTracks;
-    private final Map<String, VideoCapturer> mVideoCapturers;
+    public final Map<String, VideoCapturer> mVideoCapturers;
     private final MediaConstraints pcConstraints = new MediaConstraints();
 
     public WebRTCModule(ReactApplicationContext reactContext) {
@@ -558,7 +558,7 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
      * @param facingMode 'user' or 'environment' facing mode, optional
      * @return <tt>VideoCapturer</tt> instance obtained for given arguments.
      */
-    private VideoCapturer getVideoCapturerById(Integer id, String facingMode) {
+    public VideoCapturer getVideoCapturerById(Integer id, String facingMode) {
         String name
             = id != null ? CameraEnumerationAndroid.getDeviceName(id) : null;
         if (name == null) {

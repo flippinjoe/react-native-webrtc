@@ -4,7 +4,7 @@ import android.util.Log;
 
 import org.webrtc.VideoCapturerAndroid;
 
-class CameraEventsHandler implements VideoCapturerAndroid.CameraEventsHandler {
+public class CameraEventsHandler implements VideoCapturerAndroid.CameraEventsHandler {
     private final static String TAG = WebRTCModule.TAG;
 
     // Camera error handler - invoked when camera can not be opened
