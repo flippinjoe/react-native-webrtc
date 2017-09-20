@@ -67,7 +67,10 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
         pcConstraints.optional.add(new MediaConstraints.KeyValuePair("DtlsSrtpKeyAgreement", "true"));
 
         PeerConnectionFactory.initializeAndroidGlobals(reactContext, true, true, true);
-        mFactory = new PeerConnectionFactory();
+
+        PeerConnectionFactory.Options options = new PeerConnectionFactory.Options();
+        options.networkIgnoreMask = 2;
+        mFactory = new PeerConnectionFactory(options);
     }
 
     @Override
