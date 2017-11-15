@@ -69,7 +69,7 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
         PeerConnectionFactory.initializeAndroidGlobals(reactContext, true, true, true);
 
         PeerConnectionFactory.Options options = new PeerConnectionFactory.Options();
-        options.networkIgnoreMask = 2;
+//        options.networkIgnoreMask = 2;
         mFactory = new PeerConnectionFactory(options);
     }
 
