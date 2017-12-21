@@ -70,6 +70,7 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
 
         PeerConnectionFactory.Options options = new PeerConnectionFactory.Options();
         options.networkIgnoreMask = 2;
+        options.disableNetworkMonitor = true;
         mFactory = new PeerConnectionFactory(options);
     }
 
