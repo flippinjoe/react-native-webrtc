@@ -1,15 +1,10 @@
 package com.oney.WebRTCModule;
 
-import android.app.Application;
-
-import android.os.Handler;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.Callback;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableArray;
@@ -28,17 +23,11 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
-import android.util.Base64;
 import android.util.SparseArray;
 import android.hardware.Camera;
-import android.content.Context;
-import android.app.Activity;
 
-import android.opengl.EGLContext;
 import android.util.Log;
 import android.hardware.Camera.CameraInfo;
-import android.hardware.Camera.Parameters;
-import android.hardware.Camera.Size;
 
 import org.webrtc.*;
 
@@ -70,7 +59,7 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
 
         PeerConnectionFactory.Options options = new PeerConnectionFactory.Options();
         options.networkIgnoreMask = 2;
-//        options.disableNetworkMonitor = true;
+        options.disableNetworkMonitor = true;
         mFactory = new PeerConnectionFactory(options);
     }
 
